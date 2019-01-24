@@ -27,7 +27,7 @@ The implementation of this experiment relies on two main steps: (1) generating a
 ### II. Instructions for use
 1. Make sure the folder contains the file `sounds_patterns.csv`. The same folder should also include the two python files that are mentioned below.
 
-2. Call `create_audio.py` to generate the 35 audio files that corresponds to the stimuli. The audio files will be saved in the same folder.
+2. Call `create_audio.py` to generate the 35 audio files that correspond to the stimuli. The audio files will be saved in the same folder.
 
 3. Call `pulsation.py` to launch the Expyriment's interface and start the experiment.
 
@@ -98,4 +98,4 @@ I had no previous knowledge of programming whatsoever but the basics learned dur
 * **Suggestions:**  
     1. Perhaps it would have been easier to start the final project a bit earlier (session 0 to create a Github repository and commit to a project on mid-November) so that one would have had more time to meet other people and help each other out. Although I have been posting some messages on Slack, I have met some of my colleagues in person and this seems easier and more efficient than copying-pasting chunks of code on Slack.
     2. I have been confused more than once by the alternation between Schoology and Slack as official communication channels: I would rather focus on one platform without any preference regarding the above mentioned ones.
-    3. Regarding the exercises, I like the distinction between core exercises and optional ones. During class, one could focus on only one major exercise/program that subsumes all the major difficulties and tricks for each chapter (e.g. visual stimuli, audio, data analysis, experiments), leaving the correction of small exercises to personal time.
+    3. Regarding the exercises, I like the distinction between core exercises and optional ones. During class, one could focus on only one major exercise/program that subsumes all the major difficulties and tricks for each chapter (e.g. visual stimuli, audio, data analysis, experiments), leaving the correction of small exercises to indivdual time.
