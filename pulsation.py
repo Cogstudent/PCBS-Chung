@@ -24,7 +24,7 @@ INSTRUCTIONS3 = "Whenever you are ready, try to reproduce the rythmic pattern yo
 INSTRUCTIONS4 = "Please press any button on the keyboard to start."
 INSTRUCTIONS5 = "Please press any button on the keyboard to move on to the next pattern."
 BACKGROUND2 = "(Playing sound...)"
-BACKGROUND1 = "(Recording...)"
+BACKGROUND1 = "(Recording your answer...)"
 
 ##########################
 
