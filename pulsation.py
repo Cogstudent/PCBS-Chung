@@ -6,7 +6,7 @@ This program present a series of audio stimuli to the suject, who has to reprodu
 import glob
 import expyriment as xpy
 from expyriment.stimuli import Audio, BlankScreen
-expyriment.control.defaults.audiosystem_sample_rate = 22050 # to avoid any mismatch with the sample rate of the audio files
+xpy.control.defaults.audiosystem_sample_rate = 22050 # avoid any mismatch with the sample rate of the audio files
 
 from expyriment import control # test
 control.set_develop_mode(True) # test
@@ -18,11 +18,12 @@ INSTRUCTIONS1 = """You will take part in a simple experiment about the sense of 
 2. When you feel you have listened to the rythmic pattern long enough to reproduce it, press the any button on the keyboard to stop the sound.
 3. The computer asks you to reproduce the rythmic pattern by pressing the ay keyboard buttton in rythm. Please keep reproducing the pattern until the computer says it is over.
 4. Press any button on the keyboard to move on to the next rythmic pattern.
-Note: you can leave at any time by pressing the ESC button."""
-INSTRUCTIONS2 = "Please listen to the rythmic pattern and try to memorize it. When you feel ready, press any button on the keyboard."
-INSTRUCTIONS3 = "Whenever you are ready, try to reproduce the rythmic pattern you have just heard by pressing any button on the keyboard in rythm. Please keep reproducing the rythmic pattern until the computer says it is over."
-INSTRUCTIONS4 = "Please press any button on the keyboard to start."
-INSTRUCTIONS5 = "Please press any button on the keyboard to move on to the next pattern."
+Note: you can leave at any time by pressing the ESC button.
+Press SPACE to continue."""
+INSTRUCTIONS2 = "Please listen to the rythmic pattern and try to memorize it. When you feel ready, press SPACE on the computer keyboard."
+INSTRUCTIONS3 = "Whenever you are ready, try to reproduce the rythmic pattern you have just heard by pressing SPACE on the keyboard in rythm. Please keep reproducing the rythmic pattern until the computer says it is over."
+INSTRUCTIONS4 = "Please press SPACE on the keyboard to start."
+INSTRUCTIONS5 = "Please press SPACE on the keyboard to move on to the next pattern."
 BACKGROUND2 = "(Playing sound...)"
 BACKGROUND1 = "(Recording your answer...)"
 
@@ -72,9 +73,9 @@ background_answer = xpy.stimuli.TextScreen("---", text = BACKGROUND2)
 instructions1.preload()
 instructions1.present()
 instructions4.preload()
-kb.wait()
+kb.wait([xpy.misc.constants.K_SPACE])
 instructions4.present()
-kb.wait()
+kb.wait([xpy.misc.constants.K_SPACE])
 
 ### START THE EXPERIMENT
 xpy.control.start()
@@ -84,9 +85,9 @@ for trial in block.trials:
     instructions2.present()
     background_sound.preload()
     exp.clock.wait(1000 - trial.stimuli[0].preload())
-    kb.wait()
+    kb.wait([xpy.misc.constants.K_SPACE])
     background_sound.present()
-    key, rt = kb.wait(callback_function = trial.stimuli[0].play()) # play the audio stimuli as long as the subject hasn't pressed any button
+    key, rt = kb.wait([xpy.misc.constants.K_SPACE], callback_function = trial.stimuli[0].play()) # play the audio stimuli as long as the subject hasn't pressed any button
     xpy.control.wait_end_audiosystem()
     exp.data.add([trial.get_factor('category'), key, rt])
     bs.present()
@@ -95,10 +96,10 @@ for trial in block.trials:
     #instructions3.present()
     #background_answer.preload()
     #exp.clock.reset_stopwatch()
-    #kb.wait()
+    #kb.wait([xpy.misc.constants.K_SPACE])
     #background_answer.present()
     #instructions5.present()
-    #kb.wait()
+    #kb.wait([xpy.misc.constants.K_SPACE])
 
 
 ### END THE EXPERIMENT
